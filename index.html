@@ -69,18 +69,65 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Декоративные элементы фона */
+        .bg-decoration {
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .bg-circle {
+            border-radius: 50%;
+            border: 2px solid #9ca3af;
+            background: transparent;
+        }
+
+        .bg-circle-filled {
+            border-radius: 50%;
+            background: #6b7280;
+        }
+
+        .bg-line {
+            border-top: 1px solid #d1d5db;
+        }
+
+        .bg-square {
+            border: 2px solid #9ca3af;
+            background: transparent;
+            transform: rotate(45deg);
+        }
+        
+        .bg-decoration-gray-light {
+            border-color: #e5e7eb;
+            background: #e5e7eb;
+        }
+        
+        .bg-decoration-gray-medium {
+            border-color: #9ca3af;
+            background: #9ca3af;
+        }
+        
+        .bg-decoration-gray-dark {
+            border-color: #6b7280;
+            background: #6b7280;
+        }
     </style>
 </head>
 <body>
 
     <!-- Навигация -->
     <nav class="fixed top-0 w-full p-6 flex justify-between items-center z-50 mix-blend-difference text-white pointer-events-none">
-        <span class="font-serif text-xl tracking-widest pointer-events-auto">СОВЕТОЛОГИ</span>
+        <img src="images/logo.png" alt="Советологи" class="h-12 md:h-16 pointer-events-auto">
     </nav>
 
     <!-- БЛОК 1: СТАРТ (HERO) -->
-    <section class="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 relative pt-20">
-        <div class="max-w-5xl">
+    <section class="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 relative pt-20 overflow-hidden">
+        <!-- Декоративные элементы фона -->
+        <div class="bg-decoration w-48 h-48 bg-circle bg-decoration-gray-medium top-10 right-0 md:right-10"></div>
+        <div class="bg-decoration w-24 h-24 bg-circle-filled bg-decoration-gray-dark bottom-20 left-0 md:left-10"></div>
+        <div class="bg-decoration w-16 h-16 bg-square bg-decoration-gray-light top-1/4 right-0"></div>
+        
+        <div class="max-w-5xl relative z-10">
             <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.15] mb-8 font-light">
                 Советологи без границ
             </h1>
@@ -105,42 +152,28 @@
                     </div>
                 </div>
 
-                <p class="font-light text-lg md:text-xl leading-relaxed text-neutral-800 text-justify md:text-left">
-                    Мы не лечим. Мы не обещаем новую жизнь за 10 шагов. <br>
-                    Мы ищем способы подружиться с вашим внутренним хаосом.
-                </p>
-                
-                <p class="font-serif italic text-xl text-neutral-600">
-                    Со своим вроде бы как подружились.
-                </p>
-                
                 <div class="pt-8">
                     <a href="#experts" class="group relative inline-block px-8 py-4 border border-black overflow-hidden transition-all hover:pr-12 duration-300 cursor-pointer">
                         <span class="relative z-10 text-sm uppercase tracking-[0.15em] font-medium transition-colors group-hover:text-white">
-                            Выбрать психолога
+                            Кто мы?
                         </span>
                         <div class="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
                     </a>
                 </div>
             </div>
         </div>
-
-        <div class="absolute bottom-12 left-6 md:left-12 lg:left-24 animate-bounce duration-[2000ms]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
-        </div>
     </section>
 
     <!-- БЛОК 2: О КАЖДОМ ПСИХОЛОГЕ -->
-    <section id="experts" class="py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-black/10">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-8">
-            
-            <!-- Заголовок секции -->
-            <div class="md:col-span-3">
-                <h2 class="font-serif text-3xl md:text-4xl sticky top-32">Эксперты</h2>
-            </div>
-
+    <section id="experts" class="py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-black/10 relative overflow-hidden">
+        <!-- Декоративные элементы фона -->
+        <div class="bg-decoration w-40 h-40 bg-circle bg-decoration-gray-light top-20 right-0"></div>
+        <div class="bg-decoration w-20 h-20 bg-circle-filled bg-decoration-gray-medium bottom-20 left-0"></div>
+        <div class="bg-decoration w-14 h-14 bg-square bg-decoration-gray-dark top-1/4 left-0"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
             <!-- Список специалистов -->
-            <div class="md:col-span-9 space-y-0">
+            <div class="space-y-0">
                 
                 <!-- 1. Андрей Родионов -->
                 <div class="group border-t border-black/20 py-12 md:py-16 first:border-t-0 transition-colors duration-500 -mx-6 px-6 md:mx-0 md:px-8">
@@ -168,6 +201,29 @@
                                     <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Полное принятие своей идентичности</span></li>
                                     <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Власть над зависимостью и обретение контроля</span></li>
                                 </ul>
+                                
+                                <!-- Контакты -->
+                                <div class="mt-8 pt-6 border-t border-black/10 space-y-3">
+                                    <p class="text-sm text-neutral-700"><a href="tel:+79191100912" class="hover:underline">+79191100912</a></p>
+                                    <p class="text-sm text-neutral-700">Челябинск, ул. Витебская, д. 2</p>
+                                    <p class="text-sm text-neutral-600">Стоимость консультации от 5000 руб</p>
+                                    <div class="flex items-center gap-4 mt-4">
+                                        <a href="https://t.me/rodionov_help" target="_blank" rel="noopener noreferrer" class="text-black hover:opacity-60 transition-opacity">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                            </svg>
+                                        </a>
+                                        <a href="https://vk.ru/rodionoff78" target="_blank" rel="noopener noreferrer" class="text-black hover:opacity-60 transition-opacity">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M14 19h-4a8 8 0 0 1 -8 -8v-5h4v5a4 4 0 0 0 4 4h0v-9h4v4.5l.03 0a4.531 4.531 0 0 0 3.97 -4.496h4l-.342 1.711a6.858 6.858 0 0 1 -3.658 4.789h0a5.34 5.34 0 0 1 3.566 4.111l.434 2.389h-4a4.531 4.531 0 0 0 -3.97 -4.496v4.5z" />
+                                            </svg>
+                                        </a>
+                                        <a href="https://www.instagram.com/psy.rodionov_help?igsh=dW51c3J3eHJpdndh" target="_blank" rel="noopener noreferrer" class="text-black hover:opacity-60 transition-opacity">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -197,6 +253,20 @@
                                     <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Сопровождение семьи подростком</span></li>
                                     <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Семейные консультации в паре с ко-терапевтом</span></li>
                                 </ul>
+                                
+                                <!-- Контакты -->
+                                <div class="mt-8 pt-6 border-t border-black/10 space-y-3">
+                                    <p class="text-sm text-neutral-700"><a href="tel:+79514755161" class="hover:underline">+79514755161</a></p>
+                                    <p class="text-sm text-neutral-700">Челябинск, ул. 40 летия Победы, д. 47</p>
+                                    <p class="text-sm text-neutral-600">Стоимость консультации от 2500 руб</p>
+                                    <div class="flex items-center gap-4 mt-4">
+                                        <a href="https://vk.ru/feofilofamn" target="_blank" rel="noopener noreferrer" class="text-black hover:opacity-60 transition-opacity">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M14 19h-4a8 8 0 0 1 -8 -8v-5h4v5a4 4 0 0 0 4 4h0v-9h4v4.5l.03 0a4.531 4.531 0 0 0 3.97 -4.496h4l-.342 1.711a6.858 6.858 0 0 1 -3.658 4.789h0a5.34 5.34 0 0 1 3.566 4.111l.434 2.389h-4a4.531 4.531 0 0 0 -3.97 -4.496v4.5z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -256,6 +326,23 @@
                                     <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Переживание тяжелой жизненной ситуации (измена, развод, болезнь...)</span></li>
                                     <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Неуверенность в себе, недовольство собой и своей жизнью</span></li>
                                 </ul>
+                                
+                                <!-- Контакты -->
+                                <div class="mt-8 pt-6 border-t border-black/10 space-y-3">
+                                    <p class="text-sm text-neutral-700"><a href="tel:+79518063906" class="hover:underline">+7 951 806 3906</a></p>
+                                    <p class="text-sm text-neutral-700">Челябинск, ул. Пушкина, д. 67</p>
+                                    <p class="text-sm text-neutral-600">Стоимость консультации от 3000 руб</p>
+                                    <div class="flex items-center gap-4 mt-4">
+                                        <a href="https://vk.ru/id788567628" target="_blank" rel="noopener noreferrer" class="text-black hover:opacity-60 transition-opacity">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M14 19h-4a8 8 0 0 1 -8 -8v-5h4v5a4 4 0 0 0 4 4h0v-9h4v4.5l.03 0a4.531 4.531 0 0 0 3.97 -4.496h4l-.342 1.711a6.858 6.858 0 0 1 -3.658 4.789h0a5.34 5.34 0 0 1 3.566 4.111l.434 2.389h-4a4.531 4.531 0 0 0 -3.97 -4.496v4.5z" />
+                                            </svg>
+                                        </a>
+                                        <a href="https://www.instagram.com/alena.skvortsova.psyholog?igsh=MTYxd3ZnYzkxaXJsOA==" target="_blank" rel="noopener noreferrer" class="text-black hover:opacity-60 transition-opacity">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -285,6 +372,23 @@
                                     <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Зависимое поведение</span></li>
                                     <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Семейные/парные консультации</span></li>
                                 </ul>
+                                
+                                <!-- Контакты -->
+                                <div class="mt-8 pt-6 border-t border-black/10 space-y-3">
+                                    <p class="text-sm text-neutral-700"><a href="tel:+79127775320" class="hover:underline">+79127775320</a></p>
+                                    <p class="text-sm text-neutral-700">Челябинск, ул. Лесопарковая, д. 6</p>
+                                    <p class="text-sm text-neutral-600">Стоимость консультации от 3500 руб</p>
+                                    <div class="flex items-center gap-4 mt-4">
+                                        <a href="https://vk.ru/id6036931" target="_blank" rel="noopener noreferrer" class="text-black hover:opacity-60 transition-opacity">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M14 19h-4a8 8 0 0 1 -8 -8v-5h4v5a4 4 0 0 0 4 4h0v-9h4v4.5l.03 0a4.531 4.531 0 0 0 3.97 -4.496h4l-.342 1.711a6.858 6.858 0 0 1 -3.658 4.789h0a5.34 5.34 0 0 1 3.566 4.111l.434 2.389h-4a4.531 4.531 0 0 0 -3.97 -4.496v4.5z" />
+                                            </svg>
+                                        </a>
+                                        <a href="https://www.instagram.com/psychologist_elenaurycheva?igsh=OTZzdHZnd3FobHcx" target="_blank" rel="noopener noreferrer" class="text-black hover:opacity-60 transition-opacity">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -317,6 +421,18 @@
                                     <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Измена как симптом семьи</span></li>
                                     <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Психосоматика</span></li>
                                 </ul>
+                                
+                                <!-- Контакты -->
+                                <div class="mt-8 pt-6 border-t border-black/10 space-y-3">
+                                    <p class="text-sm text-neutral-700"><a href="tel:+79511121433" class="hover:underline">+79511121433</a></p>
+                                    <p class="text-sm text-neutral-700">Челябинск, ул. Шоссе Металлургов, д. 88/1</p>
+                                    <p class="text-sm text-neutral-600">Стоимость консультации от 4000 рублей</p>
+                                    <div class="flex items-center gap-4 mt-4">
+                                        <a href="https://www.instagram.com/psycholog_anya?igsh=MThyam5pdmhkMGpnbw==" target="_blank" rel="noopener noreferrer" class="text-black hover:opacity-60 transition-opacity">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -357,14 +473,20 @@
     </section>
 
     <!-- БЛОК 3: ФИНАЛЬНЫЙ БЛОК -->
-    <section id="contact" class="py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center border-t border-black/10 bg-neutral-50">
-        <div class="max-w-2xl mx-auto space-y-12">
-            <h2 class="font-serif text-3xl md:text-5xl italic leading-relaxed text-neutral-800 font-light">
-                «Здесь каждый из нас раскрывается не только как эксперт, но и как человек.»
-            </h2>
+    <section id="contact" class="py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center border-t border-black/10 bg-neutral-50 relative overflow-hidden">
+        <!-- Декоративные элементы фона -->
+        <div class="bg-decoration w-40 h-40 bg-circle bg-decoration-gray-dark top-20 left-0"></div>
+        <div class="bg-decoration w-20 h-20 bg-circle-filled bg-decoration-gray-light bottom-20 right-0"></div>
+        <div class="bg-decoration w-14 h-14 bg-square bg-decoration-gray-medium bottom-1/4 left-0"></div>
+        
+        <div class="max-w-2xl mx-auto space-y-12 relative z-10">
+            <p class="font-light text-lg md:text-xl leading-relaxed text-neutral-800 text-center">
+                Мы не лечим. Мы не обещаем новую жизнь за 10 шагов. <br>
+                Мы ищем способы подружиться с вашим внутренним хаосом.
+            </p>
             
-            <p class="font-light text-lg md:text-xl leading-relaxed text-neutral-600">
-                Мы делимся личными историями, через которые пришли в профессию, сомнениями, что нас меняли, и уроками, которые стали частью нашей жизни. Мы не скрываемся за терминами — за каждым методом стоит личный опыт, а за теорией — живая вера в то, что даже специалисту нужно оставаться настоящим.
+            <p class="font-serif italic text-xl md:text-2xl text-neutral-600 text-center">
+                Со своим вроде бы как подружились.
             </p>
             
             <div class="w-16 h-px bg-black/20 mx-auto mt-12 mb-8"></div>
@@ -397,12 +519,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Простой футер -->
-    <footer class="py-8 px-6 flex justify-between items-center text-[10px] uppercase tracking-widest text-neutral-400 border-t border-black/5">
-        <span>© 2024 Sovetology</span>
-        <span>Москва, Чистые пруды</span>
-    </footer>
 
 </body>
 </html>
