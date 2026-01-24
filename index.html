@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Советологи | Группа психологов</title>
+    
+    <!-- Подключение шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    colors: {
+                        black: '#0a0a0a',
+                        white: '#ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: white;
+            color: #0a0a0a;
+            font-family: "Manrope", sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background-color: #0a0a0a;
+            color: white;
+        }
+
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+        }
+
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #000;
+            transform-origin: bottom right;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навигация -->
+    <nav class="fixed top-0 w-full p-6 flex justify-between items-center z-50 mix-blend-difference text-white pointer-events-none">
+        <span class="font-serif text-xl tracking-widest pointer-events-auto">СОВЕТОЛОГИ</span>
+    </nav>
+
+    <!-- БЛОК 1: СТАРТ (HERO) -->
+    <section class="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 relative pt-20">
+        <div class="max-w-5xl">
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.15] mb-8 font-light">
+                Советологи без границ
+            </h1>
+            
+            <p class="font-serif italic text-2xl md:text-3xl text-neutral-800 mb-12 max-w-3xl leading-relaxed">
+                Психотерапевты, которые не делают вид, что жизнь логичная.
+            </p>
+            
+            <div class="md:ml-12 max-w-2xl mt-8 space-y-8">
+                <p class="font-light text-lg md:text-xl leading-relaxed text-neutral-800 text-justify md:text-left">
+                    Мы смешиваем экзистенциальную мудрость, гуманизм и абсурд повседневности, потому что реальность редко укладывается в схемы и чек-листы.
+                </p>
+
+                <div class="space-y-4 border-l-2 border-black/10 pl-6 my-8">
+                    <div>
+                        <p class="text-sm uppercase tracking-widest text-neutral-400 mb-1">Мы не спрашиваем:</p>
+                        <p class="text-lg">«Что с тобой не так?»</p>
+                    </div>
+                    <div>
+                        <p class="text-sm uppercase tracking-widest text-neutral-400 mb-1">Мы исследуем:</p>
+                        <p class="text-lg">«Как мне жить с тем, что со мной есть?»</p>
+                    </div>
+                </div>
+
+                <p class="font-light text-lg md:text-xl leading-relaxed text-neutral-800 text-justify md:text-left">
+                    Мы не лечим. Мы не обещаем новую жизнь за 10 шагов. <br>
+                    Мы ищем способы подружиться с вашим внутренним хаосом.
+                </p>
+                
+                <p class="font-serif italic text-xl text-neutral-600">
+                    Со своим вроде бы как подружились.
+                </p>
+                
+                <div class="pt-8">
+                    <a href="#experts" class="group relative inline-block px-8 py-4 border border-black overflow-hidden transition-all hover:pr-12 duration-300 cursor-pointer">
+                        <span class="relative z-10 text-sm uppercase tracking-[0.15em] font-medium transition-colors group-hover:text-white">
+                            Выбрать психолога
+                        </span>
+                        <div class="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-12 left-6 md:left-12 lg:left-24 animate-bounce duration-[2000ms]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+        </div>
+    </section>
+
+    <!-- БЛОК 2: О КАЖДОМ ПСИХОЛОГЕ -->
+    <section id="experts" class="py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-black/10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-8">
+            
+            <!-- Заголовок секции -->
+            <div class="md:col-span-3">
+                <h2 class="font-serif text-3xl md:text-4xl sticky top-32">Эксперты</h2>
+            </div>
+
+            <!-- Список специалистов -->
+            <div class="md:col-span-9 space-y-0">
+                
+                <!-- 1. Андрей Родионов -->
+                <div class="group border-t border-black/20 py-12 md:py-16 first:border-t-0 transition-colors duration-500 -mx-6 px-6 md:mx-0 md:px-8">
+                    <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
+                        <div class="md:w-5/12 flex flex-col gap-6">
+                            <div class="relative aspect-[3/4] w-full overflow-hidden bg-neutral-100">
+                                <img src="images/1.jfif" alt="Андрей Родионов" class="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100">
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-3xl mb-3 group-hover:italic transition-all duration-300">Андрей Родионов</h3>
+                                <p class="text-xs uppercase tracking-[0.15em] text-neutral-500 leading-relaxed font-medium">
+                                    Психотерапевт, супервизор, ВИЧ-консультант
+                                </p>
+                            </div>
+                        </div>
+                        <div class="md:w-7/12 pt-0 md:pt-4">
+                            <div class="space-y-6 md:pl-8 border-l border-black/0 md:border-black/5 md:group-hover:border-black/20 transition-colors duration-500">
+                                <p class="font-serif italic text-xl text-black/80">То, над чем мы работаем вместе:</p>
+                                <ul class="space-y-3">
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Честность с собой</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Построение здоровых отношений</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Сепарация и выстраивание личных границ</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Пересборка себя заново после кризиса</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Поиск себя и своих ценностей</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Полное принятие своей идентичности</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Власть над зависимостью и обретение контроля</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Мария Феофилова -->
+                <div class="group border-t border-black/20 py-12 md:py-16 transition-colors duration-500 -mx-6 px-6 md:mx-0 md:px-8">
+                    <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
+                        <div class="md:w-5/12 flex flex-col gap-6">
+                            <div class="relative aspect-[3/4] w-full overflow-hidden bg-neutral-100">
+                                <img src="images/2.jfif" alt="Мария Феофилова" class="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100">
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-3xl mb-3 group-hover:italic transition-all duration-300">Мария Феофилова</h3>
+                                <p class="text-xs uppercase tracking-[0.15em] text-neutral-500 leading-relaxed font-medium">
+                                    Детско-подростковый семейный терапевт
+                                </p>
+                            </div>
+                        </div>
+                        <div class="md:w-7/12 pt-0 md:pt-4">
+                            <div class="space-y-6 md:pl-8 border-l border-black/0 md:border-black/5 md:group-hover:border-black/20 transition-colors duration-500">
+                                <p class="font-serif italic text-xl text-black/80">С какой проблематикой я работаю:</p>
+                                <ul class="space-y-3">
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Детские возрастные кризисы</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Норма и патология</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Подростковый возраст</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Сопровождение семьи подростком</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Семейные консультации в паре с ко-терапевтом</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Гостюхина Татьяна -->
+                <div class="group border-t border-black/20 py-12 md:py-16 transition-colors duration-500 -mx-6 px-6 md:mx-0 md:px-8">
+                    <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
+                        <div class="md:w-5/12 flex flex-col gap-6">
+                            <div class="relative aspect-[3/4] w-full overflow-hidden bg-neutral-100">
+                                <img src="images/3.jfif" alt="Гостюхина Татьяна" class="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100">
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-3xl mb-3 group-hover:italic transition-all duration-300">Гостюхина Татьяна</h3>
+                                <p class="text-xs uppercase tracking-[0.15em] text-neutral-500 leading-relaxed font-medium">
+                                    Психотерапевт, супервизор
+                                </p>
+                            </div>
+                        </div>
+                        <div class="md:w-7/12 pt-0 md:pt-4">
+                            <div class="space-y-6 md:pl-8 border-l border-black/0 md:border-black/5 md:group-hover:border-black/20 transition-colors duration-500">
+                                <p class="font-serif italic text-xl text-black/80">Работаю с запросами по преодолению:</p>
+                                <ul class="space-y-3">
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Тревоги и панических атак</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Стресса и выгорания</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Конфликтов и трудностей в отношениях</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Низкой самооценки и самокритики</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Кризисных состояний и потерь</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Алена Скворцова -->
+                <div class="group border-t border-black/20 py-12 md:py-16 transition-colors duration-500 -mx-6 px-6 md:mx-0 md:px-8">
+                    <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
+                        <div class="md:w-5/12 flex flex-col gap-6">
+                            <div class="relative aspect-[3/4] w-full overflow-hidden bg-neutral-100">
+                                <img src="images/4.jfif" alt="Алена Скворцова" class="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100">
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-3xl mb-3 group-hover:italic transition-all duration-300">Алена Скворцова</h3>
+                                <p class="text-xs uppercase tracking-[0.15em] text-neutral-500 leading-relaxed font-medium">
+                                    Психолог, психотерапевт
+                                </p>
+                            </div>
+                        </div>
+                        <div class="md:w-7/12 pt-0 md:pt-4">
+                            <div class="space-y-6 md:pl-8 border-l border-black/0 md:border-black/5 md:group-hover:border-black/20 transition-colors duration-500">
+                                <p class="font-serif italic text-xl text-black/80">Работаю с запросами:</p>
+                                <ul class="space-y-3">
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Трудности в отношениях</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Тревожные и депрессивные состояния</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Панические атаки</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Переживание горя, утраты</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Переживание тяжелой жизненной ситуации (измена, развод, болезнь...)</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Неуверенность в себе, недовольство собой и своей жизнью</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Елена Урычева -->
+                <div class="group border-t border-black/20 py-12 md:py-16 transition-colors duration-500 -mx-6 px-6 md:mx-0 md:px-8">
+                    <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
+                        <div class="md:w-5/12 flex flex-col gap-6">
+                            <div class="relative aspect-[3/4] w-full overflow-hidden bg-neutral-100">
+                                <img src="images/5.jfif" alt="Елена Урычева" class="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100">
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-3xl mb-3 group-hover:italic transition-all duration-300">Елена Урычева</h3>
+                                <p class="text-xs uppercase tracking-[0.15em] text-neutral-500 leading-relaxed font-medium">
+                                    Индивидуальный и семейный психолог, горепросветительница, специалист по работе с зависимым и проблемным поведением
+                                </p>
+                            </div>
+                        </div>
+                        <div class="md:w-7/12 pt-0 md:pt-4">
+                            <div class="space-y-6 md:pl-8 border-l border-black/0 md:border-black/5 md:group-hover:border-black/20 transition-colors duration-500">
+                                <p class="font-serif italic text-xl text-black/80">Работаю с запросами:</p>
+                                <ul class="space-y-3">
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Тревожные состояния</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Возрастные кризисы</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Пространство горя потерь</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Зависимое поведение</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Семейные/парные консультации</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Ращектаева Аня -->
+                <div class="group border-t border-black/20 py-12 md:py-16 transition-colors duration-500 -mx-6 px-6 md:mx-0 md:px-8">
+                    <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
+                        <div class="md:w-5/12 flex flex-col gap-6">
+                            <div class="relative aspect-[3/4] w-full overflow-hidden bg-neutral-100">
+                                <img src="images/6.jfif" alt="Ращектаева Аня" class="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100">
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-3xl mb-3 group-hover:italic transition-all duration-300">Ращектаева Аня</h3>
+                                <p class="text-xs uppercase tracking-[0.15em] text-neutral-500 leading-relaxed font-medium">
+                                    Психолог, психотерапевт
+                                </p>
+                            </div>
+                        </div>
+                        <div class="md:w-7/12 pt-0 md:pt-4">
+                            <div class="space-y-6 md:pl-8 border-l border-black/0 md:border-black/5 md:group-hover:border-black/20 transition-colors duration-500">
+                                <p class="font-serif italic text-xl text-black/80">Работаю с запросами:</p>
+                                <ul class="space-y-3">
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Изучение, анализ и трансформация жизненного сценария</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Тревожно-депрессивные состояния</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Панические атаки</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Кризисные жизненные ситуации</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Психологическое сопровождение горя и утраты</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Экзистенциальные темы — одиночество, смысл/бессмысленность жизненного пути</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Измена как симптом семьи</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Психосоматика</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Марина Булашова -->
+                <div class="group border-t border-black/20 py-12 md:py-16 transition-colors duration-500 -mx-6 px-6 md:mx-0 md:px-8">
+                    <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
+                        <div class="md:w-5/12 flex flex-col gap-6">
+                            <div class="relative aspect-[3/4] w-full overflow-hidden bg-neutral-100">
+                                <img src="images/7.jfif" alt="Марина Булашова" class="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100">
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-3xl mb-3 group-hover:italic transition-all duration-300">Марина Булашова</h3>
+                                <p class="text-xs uppercase tracking-[0.15em] text-neutral-500 leading-relaxed font-medium">
+                                    Психолог, психотерапевт, семейный системный психотерапевт, супервизор
+                                </p>
+                            </div>
+                        </div>
+                        <div class="md:w-7/12 pt-0 md:pt-4">
+                            <div class="space-y-6 md:pl-8 border-l border-black/0 md:border-black/5 md:group-hover:border-black/20 transition-colors duration-500">
+                                <p class="font-serif italic text-xl text-black/80">Работаю с запросами:</p>
+                                <ul class="space-y-3">
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Тревога, страхи, панические атаки</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Ограничивающие убеждения, низкая самооценка, неуверенность в себе, непринятие себя</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Утраты</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Проблемы в отношениях с родителями во взрослом возрасте</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Сложности в построении или сохранении отношений</span></li>
+                                    <li class="text-neutral-600 font-light leading-relaxed flex gap-4 text-sm md:text-base"><span class="shrink-0 opacity-30 mt-[0.6em] w-1.5 h-1.5 rounded-full bg-black block"></span><span>Проблемы между супругами</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 3: ФИНАЛЬНЫЙ БЛОК -->
+    <section id="contact" class="py-32 md:py-48 px-6 md:px-12 flex flex-col items-center justify-center text-center border-t border-black/10 bg-neutral-50">
+        <div class="max-w-2xl mx-auto space-y-12">
+            <h2 class="font-serif text-3xl md:text-5xl italic leading-relaxed text-neutral-800 font-light">
+                «Здесь каждый из нас раскрывается не только как эксперт, но и как человек.»
+            </h2>
+            
+            <p class="font-light text-lg md:text-xl leading-relaxed text-neutral-600">
+                Мы делимся личными историями, через которые пришли в профессию, сомнениями, что нас меняли, и уроками, которые стали частью нашей жизни. Мы не скрываемся за терминами — за каждым методом стоит личный опыт, а за теорией — живая вера в то, что даже специалисту нужно оставаться настоящим.
+            </p>
+            
+            <div class="w-16 h-px bg-black/20 mx-auto mt-12 mb-8"></div>
+            
+            <div class="flex items-center justify-center gap-8">
+                <!-- Telegram -->
+                <a href="https://t.me/sovetology" target="_blank" rel="noopener noreferrer" class="text-black hover:opacity-60 transition-opacity p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </a>
+                
+                <!-- VK -->
+                <a href="https://vk.ru/sovetology" target="_blank" rel="noopener noreferrer" class="text-black hover:opacity-60 transition-opacity p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 19h-4a8 8 0 0 1 -8 -8v-5h4v5a4 4 0 0 0 4 4h0v-9h4v4.5l.03 0a4.531 4.531 0 0 0 3.97 -4.496h4l-.342 1.711a6.858 6.858 0 0 1 -3.658 4.789h0a5.34 5.34 0 0 1 3.566 4.111l.434 2.389h-4a4.531 4.531 0 0 0 -3.97 -4.496v4.5z" />
+                    </svg>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/sovetology_bez_granic?igsh=MTB2ZTI5azJpeGF1ZA==" target="_blank" rel="noopener noreferrer" class="text-black hover:opacity-60 transition-opacity p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+                
+                <!-- YouTube -->
+                <a href="https://youtube.com/channel/UCk0szwhBmj-l1YNAKAB23vg?si=9XyPc-6AjtnROBGH" target="_blank" rel="noopener noreferrer" class="text-black hover:opacity-60 transition-opacity p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Простой футер -->
+    <footer class="py-8 px-6 flex justify-between items-center text-[10px] uppercase tracking-widest text-neutral-400 border-t border-black/5">
+        <span>© 2024 Sovetology</span>
+        <span>Москва, Чистые пруды</span>
+    </footer>
+
+</body>
+</html>
