@@ -7,7 +7,7 @@ const App = () => {
       id: 1,
       name: "Андрей Родионов",
       role: "Психотерапевт, супервизор, ВИЧ-консультант",
-      image: "/images/1_new.jpg",
+      image: "/images/1.jfif",
       descTitle: "То, над чем мы работаем вместе:",
       descItems: [
         "Честность с собой",
@@ -23,7 +23,7 @@ const App = () => {
       id: 2,
       name: "Мария Феофилова",
       role: "Детско-подростковый семейный терапевт",
-      image: "/images/2_new.jpg",
+      image: "/images/2.jfif",
       descTitle: "С какой проблематикой я работаю:",
       descItems: [
         "Детские возрастные кризисы",
@@ -51,7 +51,7 @@ const App = () => {
       id: 4,
       name: "Алена Скворцова",
       role: "Психолог, психотерапевт",
-      image: "/images/4_new.jpg",
+      image: "/images/4.jfif",
       descTitle: "Работаю с запросами:",
       descItems: [
         "Трудности в отношениях",
