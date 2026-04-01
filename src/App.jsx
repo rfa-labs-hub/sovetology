@@ -38,6 +38,8 @@ const App = () => {
       name: "Гостюхина Татьяна",
       role: "Психотерапевт, супервизор",
       image: "/images/3_new.jpg",
+      imageClass: "group-hover:scale-[2.04]",
+      imageStyle: { objectPosition: "45% -40%", transform: "scale(2)", transformOrigin: "center center" },
       descTitle: "Работаю с запросами по преодолению:",
       descItems: [
         "Тревоги и панических атак",
@@ -67,6 +69,8 @@ const App = () => {
       name: "Елена Урычева",
       role: "Индивидуальный и семейный психолог, горепросветительница, специалист по работе с зависимым и проблемным поведением",
       image: "/images/5_new.jpg",
+      imageClass: "group-hover:scale-[2.04]",
+      imageStyle: { objectPosition: "45% -10%", transform: "scale(2)", transformOrigin: "center center" },
       descTitle: "Работаю с запросами:",
       descItems: [
         "Тревожные состояния",
@@ -81,6 +85,8 @@ const App = () => {
       name: "Ращектаева Аня",
       role: "Психолог, психотерапевт",
       image: "/images/6_new.jpg",
+      imageClass: "group-hover:scale-[1.74]",
+      imageStyle: { objectPosition: "50% 120%", transform: "scale(1.7)", transformOrigin: "center top" },
       descTitle: "Работаю с запросами:",
       descItems: [
         "Изучение, анализ и трансформация жизненного сценария",
@@ -98,6 +104,8 @@ const App = () => {
       name: "Марина Булашова",
       role: "Психолог, психотерапевт, семейный системный психотерапевт, супервизор",
       image: "/images/7_new.jpg",
+      imageClass: "group-hover:scale-[2.61]",
+      imageStyle: { objectPosition: "65% 160%", transform: "scale(2.55)", transformOrigin: "center top" },
       descTitle: "Работаю с запросами:",
       descItems: [
         "Тревога, страхи, панические атаки",
@@ -166,7 +174,8 @@ const App = () => {
                       <img 
                         src={specialist.image} 
                         alt={specialist.name}
-                        className="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100"
+                        className={`w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100 ${specialist.imageClass || "group-hover:scale-105"}`}
+                        style={specialist.imageStyle}
                       />
                     </div>
                     
